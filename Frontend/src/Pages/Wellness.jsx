@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Wellnes = () => {
+const Wellness = () => {
   return (
     <div className="min-h-screen bg-black text-white ">
       
@@ -167,4 +167,4 @@ const Wellnes = () => {
   )
 }
 
-export default Wellnes
+export default Wellness
