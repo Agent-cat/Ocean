@@ -67,6 +67,7 @@ const Navbar = ({ user, onLogout }) => {
             <NavLink to="/" className="flex font-[fairplay] text-2xl items-center font-bold text-white">
             Iconic <span className='text-[#D4B678]'>OceanEdge</span>
           </NavLink>
+         
           {Navconstants2.map((navItem, index) => (
               <NavLink
                 key={index}
