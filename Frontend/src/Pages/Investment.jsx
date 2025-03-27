@@ -1,10 +1,16 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Investment = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       
-      <div className="relative h-[60vh] flex items-center justify-center mb-16">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative h-[60vh] flex items-center justify-center mb-16"
+      >
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
@@ -14,7 +20,12 @@ const Investment = () => {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+        >
           <div className="inline-block px-4 py-1 rounded-full bg-amber-600/20 text-amber-400 text-sm font-medium mb-4">
             YOUR NEXT SMART INVESTMENT
           </div>
@@ -25,16 +36,31 @@ const Investment = () => {
             Own a piece of paradise that offers both an exceptional lifestyle and
             a strategic investment opportunity with compelling returns.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Featured Properties Section */}
       <div className="mb-16 px-4 md:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Featured Property Collections</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12"
+        >
+          Featured Property Collections
+        </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {/* Property Card 1 */}
-          <div className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all transform hover:scale-[1.02] duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
+          >
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
@@ -74,14 +100,25 @@ const Investment = () => {
                   <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Luxury Furnishings</li>
                 </ul>
               </div>
-              <button className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02]">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
+              >
                 Request Details
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Property Card 2 */}
-          <div className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all transform hover:scale-[1.02] duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
+          >
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop" 
@@ -121,14 +158,25 @@ const Investment = () => {
                   <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Outdoor Dining</li>
                 </ul>
               </div>
-              <button className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02]">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
+              >
                 Request Details
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Property Card 3 */}
-          <div className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all transform hover:scale-[1.02] duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
+          >
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
@@ -168,11 +216,15 @@ const Investment = () => {
                   <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Walk to Amenities</li>
                 </ul>
               </div>
-              <button className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02]">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
+              >
                 Request Details
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

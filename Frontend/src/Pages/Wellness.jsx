@@ -1,10 +1,16 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Wellness = () => {
   return (
     <div className="min-h-screen bg-black text-white ">
       
-      <div className="relative w-full h-[60vh] mb-16">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative w-full h-[60vh] mb-16"
+      >
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop" 
@@ -14,7 +20,12 @@ const Wellness = () => {
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8"
+        >
           <div className="bg-[#cd754a] text-white text-xs sm:text-sm font-medium py-2 px-4 sm:px-6 rounded-full inline-block mb-6">
             ICONIC WELLNESS EXPERIENCE
           </div>
@@ -24,11 +35,17 @@ const Wellness = () => {
           <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
             All at Your Doorstep
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Description Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16"
+      >
         <div className="text-center mb-12">
           <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto">
             At ICONIC Ocean Edge, wellness is more than just relaxation—it's a way of life. 
@@ -41,9 +58,21 @@ const Wellness = () => {
           Holistic Healing Under One Roof
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {/* Ayurveda Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
@@ -58,10 +87,16 @@ const Wellness = () => {
                 detox treatments, and herbal remedies.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Yoga Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1922&auto=format&fit=crop" 
@@ -76,10 +111,16 @@ const Wellness = () => {
                 meditation in serene ocean-facing spaces.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Naturopathy Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" 
@@ -93,10 +134,16 @@ const Wellness = () => {
                 Restore balance with hydrotherapy, mud therapy, acupuncture, and sound healing.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Spa Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1770&auto=format&fit=crop" 
@@ -111,10 +158,16 @@ const Wellness = () => {
                 massages for the ultimate relaxation.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Reiki Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=1770&auto=format&fit=crop" 
@@ -128,10 +181,16 @@ const Wellness = () => {
                 Channel cosmic energy to cleanse your aura and enhance vitality.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Nutrition Card */}
-          <div className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            viewport={{ once: true }}
+            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+          >
             <div className="h-48 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1770&auto=format&fit=crop" 
@@ -145,12 +204,18 @@ const Wellness = () => {
                 Personalized diet plans based on Ayurveda and modern nutrition science.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
       {/* Bottom Banner */}
-      <div className="bg-gradient-to-r from-[#cd754a] to-[#dfb562] py-12 px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-r from-[#cd754a] to-[#dfb562] py-12 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-serif mb-4 text-white">
             At Ocean Edge, well-being meets luxury
@@ -158,11 +223,15 @@ const Wellness = () => {
           <p className="text-lg text-white/90">
             A sanctuary where ancient wisdom and advanced wellness unite for a transformative experience.
           </p>
-          <button className="mt-8 bg-white text-[#cd754a] hover:bg-white/90 font-medium py-3 px-8 rounded-md transition">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 bg-white text-[#cd754a] hover:bg-white/90 font-medium py-3 px-8 rounded-md transition"
+          >
             Book Your Wellness Journey
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
