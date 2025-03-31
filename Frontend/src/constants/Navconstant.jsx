@@ -24,7 +24,7 @@ export const Navconstants2 = [
     
     {
         title: 'Explore',
-        to: '/explore',
+        to: '/#explore',
     },
     {
         title: 'wellness centre',

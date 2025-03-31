@@ -56,7 +56,7 @@ const Home = () => {
   const currentData = userTypeData[selectedUserType];
   
   return (
-    <div className='min-h-screen w-full'>
+    <div className='min-h-screen overflow-x-hidden w-full'>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -64,11 +64,12 @@ const Home = () => {
         className='min-h-screen w-full flex flex-col items-center justify-center text-white relative'
       >
         <div className='absolute inset-0 z-0'>
-          <motion.img 
+          <motion.video
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5 }}
-            src="https://imgs.search.brave.com/AdnbX4X-gpYV0tZpUVxh4Ef2TGpgH47zrkIqCJVnS28/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/MjM1NzE1OS9waG90/by9tb2Rlcm4tYmVh/Y2gtaG91c2Utd2l0/aC1zZWEtdmlldy1z/d2ltbWluZy1wb29s/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1ZZHRkMkYyWlJO/TkFKaW94Ym15M1ZC/OXNLMEViWi1WSjVB/UnltUmVNNWRrPQ" 
+            href="" 
+            autoPlay
             alt="Luxury Interior"
             className='w-full h-full object-cover'
           />

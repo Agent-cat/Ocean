@@ -139,9 +139,9 @@ const Navbar = ({ user, onLogout }) => {
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
-                <FaTimes className="block h-6 w-6" aria-hidden="true" />
+                <FaTimes className="block z-50 h-6 w-6" aria-hidden="true" />
               ) : (
-                <FaBars className="block h-6 w-6" aria-hidden="true" />
+                <FaBars className="block z-50 h-6 w-6" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -151,10 +151,25 @@ const Navbar = ({ user, onLogout }) => {
       
       <div
         className={`${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-          } fixed top-20 left-0 bottom-0 bg-black w-full shadow-xl transform transition-all duration-300 ease-in-out md:hidden z-50`}
+          } fixed top-0 left-0 bottom-0  bg-black w-full shadow-xl transform transition-all duration-300 ease-in-out md:hidden pt-16 `}
       >
+       
         <div className="flex flex-col  p-4 space-y-4">
           {Navconstants1.map((navItem, index) => (
+            <NavLink
+              key={index}
+              to={navItem.to}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white font-medium px-3 py-2 rounded-md bg-gray-800"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-md transition-colors duration-200"
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              {navItem.title}
+            </NavLink>
+          ))}
+          {Navconstants2.map((navItem, index) => (
             <NavLink
               key={index}
               to={navItem.to}
