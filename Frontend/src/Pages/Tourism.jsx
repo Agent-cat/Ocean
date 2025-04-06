@@ -173,7 +173,7 @@ const Tourism = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-gray-800/70 rounded-xl overflow-hidden transition duration-300"
+                className="bg-gradient-to-b from-gray-800 to-gray-900/80 rounded-2xl overflow-hidden transition-all duration-300 border border-gray-700 hover:shadow-xl hover:border-[#cd754a]/30"
               >
                 <div className="relative">
                   <motion.img 
@@ -183,16 +183,18 @@ const Tourism = () => {
                     viewport={{ once: true }}
                     src={pkg.image}
                     alt={pkg.alt}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-52 object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <motion.div 
                     initial={{ x: 100 }}
                     whileInView={{ x: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className={`absolute top-4 right-4 bg-[#cd754a] px-4 py-2 rounded-md text-sm font-medium`}
+                    className="absolute top-4 right-4 bg-gradient-to-r from-[#cd754a] to-[#dfb562] px-4 py-2 rounded-xl text-sm font-medium text-white shadow-lg"
                   >
-                    From {pkg.price}
+                    <span className="text-xs font-medium">Starting from</span>
+                    <br />
+                    <span className="text-lg font-bold">{pkg.price}</span>
                   </motion.div>
                 </div>
                 
@@ -201,36 +203,44 @@ const Tourism = () => {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="p-6"
+                  className="p-6 md:p-8"
                 >
-                  <h3 className={`text-2xl font-semibold mb-3 text-[#dfb562]`}>{pkg.title}</h3>
-                  <p className='text-slate-300 text-xl font-bold mb-4'>{pkg.quote}</p>
-                  <p className="text-gray-300 mb-4">{pkg.description}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#dfb562] bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">
+                    {pkg.title}
+                  </h3>
+                  <p className='text-lg md:text-xl font-semibold mb-4 text-[#dfb562] bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]'>
+                    {pkg.quote}
+                  </p>
+                  <p className="text-gray-300 mb-6 text-base leading-relaxed tracking-wide">
+                    {pkg.description}
+                  </p>
                   
                   <div className="flex items-center gap-4 mb-6 text-sm text-gray-400">
-                    <span className="flex items-center gap-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center gap-1.5">
+                      <svg className="w-5 h-5 text-[#cd754a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      {pkg.duration}
+                      <span className="text-gray-300 font-medium">{pkg.duration}</span>
+                    </div>
+                    <span className="px-3 py-1.5 bg-[#cd754a]/10 text-[#cd754a] rounded-full text-sm font-medium">
+                      Available Now
                     </span>
-                    <span className="text-white">Available Now</span>
                   </div>
 
-                  <ul className="space-y-2 mb-6 text-gray-300">
+                  <ul className="grid grid-cols-2 gap-3 mb-6 text-gray-300">
                     {pkg.features.map((feature, index) => (
                       <motion.li 
                         key={index} 
-                        initial={{ x: -50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2.5 p-2.5 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors"
                       >
-                        <svg className="w-5 h-5" fill="#cd754a" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="8" />
+                        <svg className="w-5 h-5 text-[#cd754a]" fill="currentColor" viewBox="0 0 24 24">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.599.111.793-.261.793-.577v-8.334c0-.284-.02-1.055-.02-1.285 0-.131-.087-.203-.139-.203-.054 0-.09.055-.111.128L7 19.238V21h6.17l-1.14-1.874H12v-2.064c.59-.076 1.032-.434 1.032-.999 0-.267-.02-.78-.02-1.48V13.52c-.02-.284-.031-1.055-.031-1.285 0-.131.087-.203.139-.203.054 0 .09.055.111.128L17 16.762V19h6.17l-1.14-1.874H20v-7.285c0-4.096-2.865-7.579-6.839-8.816C17.135 3.819 12.567 2 12 2z" clipRule="evenodd" />
                         </svg>
-                        {feature}
+                        <span className="text-sm">{feature}</span>
                       </motion.li>
                     ))}
                   </ul>
@@ -238,7 +248,7 @@ const Tourism = () => {
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-[#cd754a] hover:bg-[#cf6631] text-white py-3 rounded-lg font-medium transition`}
+                    className="w-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] hover:from-[#cf6631] hover:to-[#e09a4d] text-white py-3 rounded-lg font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Book Now
                   </motion.button>

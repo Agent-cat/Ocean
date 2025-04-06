@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Occasions = () => {
   return (
-    <div className="min-h-screen bg-black text-white ">
+    <div className="min-h-screen overflow-x-hidden bg-black text-white ">
      
       <motion.div 
         initial={{ opacity: 0 }}

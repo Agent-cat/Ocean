@@ -111,29 +111,40 @@ const Journer = () => {
                 {/* Timeline Dot */}
                 <motion.div 
                   whileHover={{ scale: 1.2 }}
-                  className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] border-4 border-black z-10 shadow-lg"
-                ></motion.div>
+                  className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] border-4 border-black z-10 shadow-xl hover:shadow-[#cd754a]/30 transition-all duration-300"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-lg">
+                    {step.id}
+                  </div>
+                </motion.div>
                 
                 {/* Content */}
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:ml-auto'}`}>
                   <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-[#cd754a]/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-[#cd754a]/30 transition-all duration-300 border border-gray-700 hover:border-[#cd754a]/20"
                   >
-                    <div className="h-72 overflow-hidden">
+                    <div className="relative h-72 overflow-hidden group">
                       <img 
                         src={step.image} 
                         alt={step.title} 
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="p-8">
+                    <div className="p-8 md:p-10">
                       <div className="bg-gradient-to-r from-[#cd754a]/20 to-[#dfb562]/20 text-[#cd754a] text-sm font-medium px-4 py-2 rounded-full mb-4 inline-block">
                         Phase {step.id}
                       </div>
-                      <h3 className="text-3xl font-serif mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#dfb562] to-white">{step.title}</h3>
-                      <p className="text-xl font-medium mb-4 text-white italic">"{step.tagline}"</p>
-                      <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                      <h3 className="text-4xl sm:text-5xl font-serif mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#dfb562] to-white">
+                        {step.title}
+                      </h3>
+                      <p className="text-xl sm:text-2xl font-medium mb-6 text-white italic bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">
+                        "{step.tagline}"
+                      </p>
+                      <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+                        {step.description}
+                      </p>
                     </div>
                   </motion.div>
                 </div>
@@ -143,7 +154,7 @@ const Journer = () => {
                   whileHover={{ scale: 1.1 }}
                   className="md:hidden mt-6 mb-10 flex items-center justify-center"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] flex items-center justify-center text-white font-bold text-lg shadow-xl hover:shadow-[#cd754a]/30 transition-all duration-300">
                     {step.id}
                   </div>
                 </motion.div>
@@ -159,15 +170,22 @@ const Journer = () => {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-black py-16 px-4 sm:px-6 lg:px-8"
+        className="bg-gradient-to-b from-black to-gray-900/90 py-20 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-serif mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">
+          <h2 className="text-4xl sm:text-5xl font-serif mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">
             Join Us on This Extraordinary Journey
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-8">
             Be part of something truly exceptional as we continue to shape the future of luxury living and hospitality.
           </p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-gradient-to-r from-[#cd754a] to-[#dfb562] text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-[#cf6631] hover:to-[#e09a4d] transition-all duration-300 shadow-lg hover:shadow-[#cd754a]/30"
+          >
+            Explore More
+          </motion.button>
         </div>
       </motion.div>
     </div>

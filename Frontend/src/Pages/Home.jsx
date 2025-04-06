@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaHeart, FaUser, FaBriefcase, FaUsers, FaVideo, FaChevronRight } from 'react-icons/fa'
 import { FaShield, FaStar, FaWandMagicSparkles, FaAward } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
-
+import bg from "../assets/bg.mp4"
 const userTypeData = {
   doctors: {
     title: "A Healing Haven",
@@ -52,29 +52,131 @@ const userTypeData = {
 };
 
 const Home = () => {
+  const [leftPanelOpen, setLeftPanelOpen] = useState(false);
+  const [rightPanelOpen, setRightPanelOpen] = useState(false);
   const [selectedUserType, setSelectedUserType] = useState('doctors');
   const currentData = userTypeData[selectedUserType];
-  
+
+  // Add panel handlers
+  const handleLeftPanelEnter = () => {
+    setLeftPanelOpen(true);
+  };
+
+  const handleLeftPanelLeave = () => {
+    setLeftPanelOpen(false);
+  };
+
+  const handleRightPanelEnter = () => {
+    setRightPanelOpen(true);
+  };
+
+  const handleRightPanelLeave = () => {
+    setRightPanelOpen(false);
+  };
+
   return (
     <div className='min-h-screen overflow-x-hidden w-full'>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className='min-h-screen w-full flex flex-col items-center justify-center text-white relative'
+        className='min-h-screen w-full flex flex-col items-center justify-center text-white relative overflow-x-hidden'
       >
+        {/* Left Semi-circle */}
+        <motion.div 
+          className="absolute z-40 left-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-white rounded-r-full shadow-lg"
+          initial={{ scale: 1 }}
+          whileHover={{ 
+            scale: 1.1,
+            x: -4,
+            y: -4,
+            boxShadow: "0 0 20px rgba(0,0,0,0.5)"
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeOut"
+          }}
+          onMouseEnter={handleLeftPanelEnter}
+          style={{ zIndex: leftPanelOpen ? 45 : 40 }}
+        />
+        
+        {/* Right Semi-circle */}
+        <motion.div 
+          className="absolute z-40 right-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-white rounded-l-full shadow-lg"
+          initial={{ scale: 1 }}
+          whileHover={{ 
+            scale: 1.1,
+            x: -4,
+            y: -4,
+            boxShadow: "0 0 20px rgba(0,0,0,0.5)"
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeOut"
+          }}
+          onMouseEnter={handleRightPanelEnter}
+          style={{ zIndex: rightPanelOpen ? 45 : 40 }}
+        />
+
+        {/* Left Sliding Panel */}
+        <motion.div 
+          initial={{ x: "-100%" }}
+          animate={{ x: leftPanelOpen ? "0%" : "-100%" }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 300,
+            damping: 30
+          }}
+          className="absolute left-0 top-0 w-1/2 h-full bg-white/95 backdrop-blur-sm"
+          style={{ zIndex: leftPanelOpen ? 60 : -1 }}
+          onMouseEnter={handleLeftPanelEnter}
+          onMouseLeave={handleLeftPanelLeave}
+        >
+          <div className="p-8">
+            <h2 className="text-2xl font-bold mb-4">Left Panel Content</h2>
+            <p className="text-gray-700">Add your content here...</p>
+          </div>
+        </motion.div>
+
+        {/* Right Sliding Panel */}
+        <motion.div 
+          initial={{ x: "100%" }}
+          animate={{ x: rightPanelOpen ? "0%" : "100%" }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 300,
+            damping: 30
+          }}
+          className="absolute right-0 top-0 w-1/2 h-full bg-white/95 backdrop-blur-sm"
+          style={{ zIndex: rightPanelOpen ? 60 : -1 }}
+          onMouseEnter={handleRightPanelEnter}
+          onMouseLeave={handleRightPanelLeave}
+        >
+          <div className="p-8">
+            <h2 className="text-2xl font-bold mb-4">Right Panel Content</h2>
+            <p className="text-gray-700">Add your content here...</p>
+          </div>
+        </motion.div>
+
         <div className='absolute inset-0 z-0'>
-          <motion.video
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1.5 }}
-            href="" 
-            autoPlay
-            alt="Luxury Interior"
-            className='w-full h-full object-cover'
-          />
-          <div className='absolute inset-0 bg-black/30'></div>
-        </div>
+  <motion.video
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 1.5 }}
+    src={bg} 
+    autoPlay
+    muted 
+    loop 
+    playsInline 
+    className='w-full h-full object-cover'
+  />
+  <div className='absolute inset-0 bg-black/30'></div>
+</div>
+
 
         <motion.div 
           initial={{ y: 50, opacity: 0 }}
