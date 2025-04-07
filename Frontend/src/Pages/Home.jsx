@@ -84,7 +84,7 @@ const Home = () => {
       >
         {/* Left Semi-circle */}
         <motion.div 
-          className="absolute z-40 left-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-white rounded-r-full shadow-lg"
+          className="absolute hidden text-xl text-black font-bold md:flex z-40 left-0 top-[40%] items-center justify-center -translate-y-1/2 w-36 h-36 bg-white/30 backdrop-blur-sm rounded-r-full shadow-lg"
           initial={{ scale: 1 }}
           whileHover={{ 
             scale: 1.1,
@@ -98,11 +98,13 @@ const Home = () => {
           }}
           onMouseEnter={handleLeftPanelEnter}
           style={{ zIndex: leftPanelOpen ? 45 : 40 }}
-        />
+        >
+          𝓓𝓲𝓼𝓬𝓸𝓿𝓮𝓻
+        </motion.div>
         
         {/* Right Semi-circle */}
         <motion.div 
-          className="absolute z-40 right-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-white rounded-l-full shadow-lg"
+          className="absolute hidden md:flex items-center justify-center text-xl text-black font-bold z-40 right-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-white/30 backdrop-blur-sm rounded-l-full shadow-lg"
           initial={{ scale: 1 }}
           whileHover={{ 
             scale: 1.1,
@@ -116,7 +118,9 @@ const Home = () => {
           }}
           onMouseEnter={handleRightPanelEnter}
           style={{ zIndex: rightPanelOpen ? 45 : 40 }}
-        />
+        >
+          𝒲𝒾𝓉𝓃𝑒𝓈𝓈
+        </motion.div>
 
         {/* Left Sliding Panel */}
         <motion.div 
@@ -134,9 +138,12 @@ const Home = () => {
           onMouseEnter={handleLeftPanelEnter}
           onMouseLeave={handleLeftPanelLeave}
         >
-          <div className="p-8">
-            <h2 className="text-2xl font-bold mb-4">Left Panel Content</h2>
-            <p className="text-gray-700">Add your content here...</p>
+          <div className=" bg-[#cd754a] w-full h-screen p-8">
+          <div className=" border-double  w-full border-2 border-white flex-col flex items-center justify-center gap-6 p-8  h-full ">
+            <h1 className='text-white   text-8xl font-bold'>𝓓𝓲𝓼𝓬𝓸𝓿𝓮𝓻</h1>
+            <h1 className='text-white text-center  text-2xl font-bold'>Discover tailor-made, end-to-end tourism packages designed just for you — covering everything from travel planning and accommodation to local experiences and seamless returns, ensuring a hassle-free and unforgettable journey.</h1>
+
+</div>
           </div>
         </motion.div>
 
@@ -156,9 +163,12 @@ const Home = () => {
           onMouseEnter={handleRightPanelEnter}
           onMouseLeave={handleRightPanelLeave}
         >
-          <div className="p-8">
-            <h2 className="text-2xl font-bold mb-4">Right Panel Content</h2>
-            <p className="text-gray-700">Add your content here...</p>
+          <div className=" bg-[#cd754a] w-full h-screen p-8">
+          <div className=" border-double  w-full border-2 border-white flex-col flex items-center justify-center gap-6 p-8  h-full ">
+            <h1 className='text-white font-[robert]   text-8xl font-bold'>𝒲𝒾𝓉𝓃𝑒𝓈𝓈</h1>
+            <h1 className='text-white text-center  text-2xl font-bold'>Witness the ultimate investment opportunity in world-class luxury resorts! Step into a realm of elegance, exclusivity, and extraordinary returns. These premier destinations aren't just a place to relax—they're a chance to elevate your portfolio with high-value assets in the booming luxury hospitality market. Don’t miss your chance to own a piece of paradise—invest in luxury, invest in success!</h1>
+
+</div>
           </div>
         </motion.div>
 
@@ -387,11 +397,11 @@ const Home = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
         id='explore' 
-        className='bg-black text-white py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8'
+        className='bg-black text-white py-12 sm:py-14 lg:py-16 overflow-hidden px-4 sm:px-6 lg:px-8'
       >
         <div className='max-w-7xl mx-auto'>
           <motion.div 
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 20, opacity: 1 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
@@ -508,7 +518,7 @@ const Home = () => {
             </motion.div>
             
             <motion.div 
-              initial={{ x: 50, opacity: 0 }}
+              initial={{ x: 50, opacity: 1 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}

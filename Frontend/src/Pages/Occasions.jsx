@@ -30,7 +30,7 @@ const Occasions = () => {
             ICONIC EVENTS & GATHERINGS
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4">
-            From Grand Celebrations to High-Impact Gatherings
+             Grand Celebrations 
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
             Where memories are crafted with elegance
@@ -73,21 +73,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1519741347686-c1e331fcb4d0?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Beachside Wedding" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Weddings & Destination Nuptials</h3>
-                <p className="text-gray-300">
-                  Say "I do" against breathtaking ocean views with customized themes and luxury accommodations.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1519741347686-c1e331fcb4d0?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Beachside Wedding"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Weddings & Destination Nuptials</h3>
+                  <p className="text-sm text-gray-300">
+                    Say "I do" against breathtaking ocean views with customized themes and luxury accommodations.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -97,21 +102,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2069&auto=format&fit=crop" 
-                  alt="Family Gathering" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Family Reunions & Private Getaways</h3>
-                <p className="text-gray-300">
-                  Gather with your loved ones in an exclusive paradise, designed for togetherness.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2069&auto=format&fit=crop" 
+                    alt="Family Gathering"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Family Reunions & Private Getaways</h3>
+                  <p className="text-sm text-gray-300">
+                    Gather with your loved ones in an exclusive paradise, designed for togetherness.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -121,21 +131,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Celebration Gala" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Birthday Bashes & Anniversary Galas</h3>
-                <p className="text-gray-300">
-                  Celebrate milestones in a grand, customized setting.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Celebration Gala"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Birthday Bashes & Anniversary Galas</h3>
+                  <p className="text-sm text-gray-300">
+                    Celebrate milestones in a grand, customized setting.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -160,21 +175,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Business Conference" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Business Conferences & Board Meetings</h3>
-                <p className="text-gray-300">
-                  Elevate your corporate discussions in an ultra-modern, inspiring setting.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Business Conference"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Business Conferences & Board Meetings</h3>
+                  <p className="text-sm text-gray-300">
+                    Elevate your corporate discussions in an ultra-modern, inspiring setting.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -184,21 +204,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Professional Retreat" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Luxury Retreats for Professionals</h3>
-                <p className="text-gray-300">
-                  Reconnect, refresh, and realign goals amidst serene landscapes.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Professional Retreat"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Luxury Retreats for Professionals</h3>
+                  <p className="text-sm text-gray-300">
+                    Reconnect, refresh, and realign goals amidst serene landscapes.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -208,21 +233,26 @@ const Occasions = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-900/50 rounded-lg overflow-hidden transition-all duration-300"
+              className="group [perspective:1000px] h-80"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Product Launch" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-[#D4B678] mb-3">Seminars, Product Launches & Expos</h3>
-                <p className="text-gray-300">
-                  Impress your audience with state-of-the-art infrastructure and premium hospitality.
-                </p>
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                
+                {/* Front Side */}
+                <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Product Launch"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="text-xl font-medium text-[#D4B678] mb-3">Seminars, Product Launches & Expos</h3>
+                  <p className="text-sm text-gray-300">
+                    Impress your audience with state-of-the-art infrastructure and premium hospitality.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>

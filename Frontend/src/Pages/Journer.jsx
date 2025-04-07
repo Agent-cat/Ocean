@@ -34,7 +34,7 @@ const journeySteps = [
 
 const Journer = () => {
   return (
-    <div className="min-h-screen bg-black  text-white">
+    <div className="min-h-screen overflow-hidden bg-black  text-white">
       
       <motion.div 
         initial={{ opacity: 0 }}

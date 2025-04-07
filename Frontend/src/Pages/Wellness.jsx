@@ -66,26 +66,34 @@ const Wellness = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {/* Ayurveda Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
-                alt="Ayurveda Retreat" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Ayurveda & Panchakarma Retreats</h3>
-              <p className="text-gray-300">
-                Experience the timeless healing power of Ayurveda, with personalized therapies, 
-                detox treatments, and herbal remedies.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
+                  alt="Ayurveda Retreat"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Ayurveda & Panchakarma Retreats
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Experience the timeless healing power of Ayurveda, with personalized therapies, detox treatments, and herbal remedies.
+                </p>
+              </div>
+
             </div>
           </motion.div>
 
@@ -95,21 +103,28 @@ const Wellness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1922&auto=format&fit=crop" 
-                alt="Yoga Sanctuary" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Yoga & Meditation Sanctuaries</h3>
-              <p className="text-gray-300">
-                Reconnect with your inner self through guided yoga and transcendental 
-                meditation in serene ocean-facing spaces.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1922&auto=format&fit=crop" 
+                  alt="Yoga Sanctuary"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Yoga & Meditation Sanctuaries
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Reconnect with your inner self through guided yoga and transcendental meditation in serene ocean-facing spaces.
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -119,20 +134,28 @@ const Wellness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" 
-                alt="Naturopathy" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Naturopathy & Holistic Therapies</h3>
-              <p className="text-gray-300">
-                Restore balance with hydrotherapy, mud therapy, acupuncture, and sound healing.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" 
+                  alt="Naturopathy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Naturopathy & Holistic Therapies
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Restore balance with hydrotherapy, mud therapy, acupuncture, and sound healing.
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -142,21 +165,28 @@ const Wellness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1770&auto=format&fit=crop" 
-                alt="Luxury Spa" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Advanced Spa & Luxury Wellness</h3>
-              <p className="text-gray-300">
-                Indulge in premium spa therapies, hydrothermal baths, and deep tissue 
-                massages for the ultimate relaxation.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1770&auto=format&fit=crop" 
+                  alt="Luxury Spa"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Advanced Spa & Luxury Wellness
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Indulge in premium spa therapies, hydrothermal baths, and deep tissue massages for the ultimate relaxation.
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -166,20 +196,28 @@ const Wellness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=1770&auto=format&fit=crop" 
-                alt="Reiki Healing" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Reiki & Energy Healing</h3>
-              <p className="text-gray-300">
-                Channel cosmic energy to cleanse your aura and enhance vitality.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=1770&auto=format&fit=crop" 
+                  alt="Reiki Healing"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Reiki & Energy Healing
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Channel cosmic energy to cleanse your aura and enhance vitality.
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -189,20 +227,28 @@ const Wellness = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group [perspective:1000px] h-80"
           >
-            <div className="h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1770&auto=format&fit=crop" 
-                alt="Nutritional Coaching" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-medium text-[#dfb562] mb-3">Nutritional & Wellness Coaching</h3>
-              <p className="text-gray-300">
-                Personalized diet plans based on Ayurveda and modern nutrition science.
-              </p>
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Side */}
+              <div className="absolute w-full h-full rounded-lg overflow-hidden [backface-visibility:hidden]">
+                <img 
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1770&auto=format&fit=crop" 
+                  alt="Nutritional Coaching"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-gray-900/80 text-white rounded-lg px-6 py-4 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <h3 className="text-xl font-medium text-[#dfb562] mb-3">
+                  Nutritional & Wellness Coaching
+                </h3>
+                <p className="text-sm text-gray-300">
+                  Personalized diet plans based on Ayurveda and modern nutrition science.
+                </p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -214,7 +260,7 @@ const Wellness = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-r from-[#cd754a] to-[#dfb562] py-12 px-4 sm:px-6 lg:px-8"
+        className="bg-black py-12 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-serif mb-4 text-white">

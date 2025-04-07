@@ -1,18 +1,50 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Investment = () => {
+  const properties = [
+    {
+      title: 'Ocean Front Villa',
+      price: '₹1.95 Cr',
+      size: '3500 sq.ft',
+      bedrooms: '3 Bedrooms',
+      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
+      description:
+        'Luxurious oceanfront villa with private pool and direct beach access. Perfect for those seeking privacy and uninterrupted sea views.',
+      features: ['Private Pool', 'Direct Beach Access', 'Landscaped Garden', 'Smart Home Tech', 'Luxury Furnishings'],
+    },
+    {
+      title: 'Sunset View Residence',
+      price: '₹1.45 Cr',
+      size: '2800 sq.ft',
+      bedrooms: '2 Bedrooms',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop',
+      description:
+        'Elevated property with stunning sunset views over the ocean and coastline. Modern architecture with floor-to-ceiling windows.',
+      features: ['Infinity Edge Pool', 'Panoramic Views', 'Gourmet Kitchen', 'Home Office', 'Outdoor Dining'],
+    },
+    {
+      title: 'Garden Retreat Villa',
+      price: '₹95 Lakhs',
+      size: '2200 sq.ft',
+      bedrooms: '2 Bedrooms',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
+      description:
+        'Serene garden villa surrounded by lush tropical landscaping. Close to resort amenities with private courtyard.',
+      features: ['Tropical Garden', 'Courtyard', 'Spa Bathroom', 'Outdoor Shower', 'Walk to Amenities'],
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white">
-      
-      <motion.div 
+    <div className="min-h-screen overflow-hidden bg-black text-white">
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative h-[60vh] flex items-center justify-center mb-16"
       >
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
             alt="Luxury Property"
             className="w-full h-full object-cover"
@@ -20,7 +52,7 @@ const Investment = () => {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -30,18 +62,17 @@ const Investment = () => {
             YOUR NEXT SMART INVESTMENT
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Luxury Living <span className="font-serif italic">&</span> <br className="md:hidden"/> <span className="text-amber-500">Smart Investment</span>
+            Luxury Living <span className="font-serif italic">&</span> <br className="md:hidden" />{' '}
+            <span className="text-amber-500">Smart Investment</span>
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
-            Own a piece of paradise that offers both an exceptional lifestyle and
-            a strategic investment opportunity with compelling returns.
+            Own a piece of paradise that offers both an exceptional lifestyle and a strategic investment opportunity with compelling returns.
           </p>
         </motion.div>
       </motion.div>
 
-      {/* Featured Properties Section */}
       <div className="mb-16 px-4 md:px-8">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,185 +81,69 @@ const Investment = () => {
         >
           Featured Property Collections
         </motion.h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {/* Property Card 1 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
-          >
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
-                alt="Ocean Front Villa" 
-                className="w-full h-72 object-cover"
-              />
-              <div className="absolute top-4 right-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
-                ₹1.95 Cr
+          {properties.map((property, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
+            >
+              <div className="relative">
+                <img src={property.image} alt={property.title} className="w-full h-72 object-cover" />
+                <div className="absolute top-4 right-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
+                  {property.price}
+                </div>
               </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-amber-400">Ocean Front Villa</h3>
-              <div className="flex text-sm text-gray-400 mb-3 space-x-4">
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                  </svg>
-                  3500 sq.ft
-                </span>
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M7 3a1 1 0 011-1h4a1 1 0 011 1v3h4a1 1 0 011 1v9a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1h4V3z"/>
-                  </svg>
-                  3 Bedrooms
-                </span>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-amber-400">{property.title}</h3>
+                <div className="flex text-sm text-gray-400 mb-3 space-x-4">
+                  <span className="flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                    {property.size}
+                  </span>
+                  <span className="flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M7 3a1 1 0 011-1h4a1 1 0 011 1v3h4a1 1 0 011 1v9a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1h4V3z" />
+                    </svg>
+                    {property.bedrooms}
+                  </span>
+                </div>
+                <p className="text-gray-300 mb-4 line-clamp-2">{property.description}</p>
+                <div className="mb-6">
+                  <h4 className="font-medium mb-3 text-gray-200">Key Features:</h4>
+                  <ul className="grid grid-cols-2 gap-2">
+                    {property.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center text-gray-300 text-sm"
+                      >
+                        <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
+                >
+                  Request Details
+                </motion.button>
               </div>
-              <p className="text-gray-300 mb-4 line-clamp-2">
-                Luxurious oceanfront villa with private pool and direct beach access. Perfect for those seeking privacy and uninterrupted sea views.
-              </p>
-              <div className="mb-6">
-                <h4 className="font-medium mb-3 text-gray-200">Key Features:</h4>
-                <ul className="grid grid-cols-2 gap-2">
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Private Pool</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Direct Beach Access</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Landscaped Garden</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Smart Home Tech</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Luxury Furnishings</li>
-                </ul>
-              </div>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
-              >
-                Request Details
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* Property Card 2 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
-          >
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop" 
-                alt="Sunset View Residence" 
-                className="w-full h-72 object-cover"
-              />
-              <div className="absolute top-4 right-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
-                ₹1.45 Cr
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-amber-400">Sunset View Residence</h3>
-              <div className="flex text-sm text-gray-400 mb-3 space-x-4">
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                  </svg>
-                  2800 sq.ft
-                </span>
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M7 3a1 1 0 011-1h4a1 1 0 011 1v3h4a1 1 0 011 1v9a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1h4V3z"/>
-                  </svg>
-                  2 Bedrooms
-                </span>
-              </div>
-              <p className="text-gray-300 mb-4 line-clamp-2">
-                Elevated property with stunning sunset views over the ocean and coastline. Modern architecture with floor-to-ceiling windows.
-              </p>
-              <div className="mb-6">
-                <h4 className="font-medium mb-3 text-gray-200">Key Features:</h4>
-                <ul className="grid grid-cols-2 gap-2">
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Infinity Edge Pool</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Panoramic Views</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Gourmet Kitchen</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Home Office</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Outdoor Dining</li>
-                </ul>
-              </div>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
-              >
-                Request Details
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* Property Card 3 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-900/50 backdrop-blur rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-amber-500/50 transition-all duration-300"
-          >
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Garden Retreat Villa" 
-                className="w-full h-72 object-cover"
-              />
-              <div className="absolute top-4 right-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
-                ₹95 Lakhs
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-amber-400">Garden Retreat Villa</h3>
-              <div className="flex text-sm text-gray-400 mb-3 space-x-4">
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                  </svg>
-                  2200 sq.ft
-                </span>
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M7 3a1 1 0 011-1h4a1 1 0 011 1v3h4a1 1 0 011 1v9a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1h4V3z"/>
-                  </svg>
-                  2 Bedrooms
-                </span>
-              </div>
-              <p className="text-gray-300 mb-4 line-clamp-2">
-                Serene garden villa surrounded by lush tropical landscaping. Close to resort amenities with private courtyard.
-              </p>
-              <div className="mb-6">
-                <h4 className="font-medium mb-3 text-gray-200">Key Features:</h4>
-                <ul className="grid grid-cols-2 gap-2">
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Tropical Garden</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Courtyard</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Spa Bathroom</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Outdoor Shower</li>
-                  <li className="flex items-center text-gray-300 text-sm"><span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>Walk to Amenities</li>
-                </ul>
-              </div>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
-              >
-                Request Details
-              </motion.button>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Investment
+export default Investment;
