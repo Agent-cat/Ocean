@@ -1,7 +1,7 @@
 export const Navconstants1 = [
     
     {
-        title: ' Journey',
+        title: ' Our Journey',
         to: '/our-journey',
     },
 

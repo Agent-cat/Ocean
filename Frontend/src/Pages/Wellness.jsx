@@ -82,6 +82,11 @@ const Wellness = () => {
                   alt="Ayurveda Retreat"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Ayurveda & Panchakarma Retreats
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -93,7 +98,6 @@ const Wellness = () => {
                   Experience the timeless healing power of Ayurveda, with personalized therapies, detox treatments, and herbal remedies.
                 </p>
               </div>
-
             </div>
           </motion.div>
 
@@ -114,6 +118,11 @@ const Wellness = () => {
                   alt="Yoga Sanctuary"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Yoga & Meditation Sanctuaries
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -145,6 +154,11 @@ const Wellness = () => {
                   alt="Naturopathy"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Naturopathy & Holistic Therapies
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -176,6 +190,11 @@ const Wellness = () => {
                   alt="Luxury Spa"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Advanced Spa & Luxury Wellness
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -207,6 +226,11 @@ const Wellness = () => {
                   alt="Reiki Healing"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Reiki & Energy Healing
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -238,6 +262,11 @@ const Wellness = () => {
                   alt="Nutritional Coaching"
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/40 flex justify-center items-center p-4 text-center">
+                  <h3 className="text-xl font-semibold text-white">
+                    Nutritional & Wellness Coaching
+                  </h3>
+                </div>
               </div>
 
               {/* Back Side */}
@@ -251,6 +280,7 @@ const Wellness = () => {
               </div>
             </div>
           </motion.div>
+
         </motion.div>
       </motion.div>
 

@@ -58,12 +58,12 @@ const Investment = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="relative z-10 text-center px-4 max-w-4xl mx-auto"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-amber-600/20 text-amber-400 text-sm font-medium mb-4">
+          <div className="inline-block px-4 py-1 rounded-full  text-amber-400 text-sm font-medium mb-4">
             YOUR NEXT SMART INVESTMENT
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Luxury Living <span className="font-serif italic">&</span> <br className="md:hidden" />{' '}
-            <span className="text-amber-500">Smart Investment</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">Smart Investment</span>
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
             Own a piece of paradise that offers both an exceptional lifestyle and a strategic investment opportunity with compelling returns.
@@ -95,12 +95,12 @@ const Investment = () => {
             >
               <div className="relative">
                 <img src={property.image} alt={property.title} className="w-full h-72 object-cover" />
-                <div className="absolute top-4 right-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#cd754a] to-[#dfb562] backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
                   {property.price}
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-amber-400">{property.title}</h3>
+                <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562]">{property.title}</h3>
                 <div className="flex text-sm text-gray-400 mb-3 space-x-4">
                   <span className="flex items-center">
                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -133,7 +133,7 @@ const Investment = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-3 rounded-lg font-medium transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] text-white py-3 rounded-lg font-medium transition-all duration-300"
                 >
                   Request Details
                 </motion.button>
