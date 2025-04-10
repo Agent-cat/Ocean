@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navroutes from './routes/Navroutes';
 import WaveLoader from './components/WaveLoader';
+import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -40,6 +41,7 @@ const App = () => {
 
   return (
     <div className="App">
+       <ScrollToTop />
       {loading && <WaveLoader />}
       <Navbar user={user} onLogout={handleLogout} />
       <div className="">

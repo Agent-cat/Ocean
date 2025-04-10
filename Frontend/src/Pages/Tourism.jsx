@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Consultation from '../components/Consultation'
 
 const tourismPackages = [
   {
@@ -130,7 +131,7 @@ const tourismPackages = [
 
 const Tourism = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen overflow-hidden bg-black text-white">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -258,8 +259,28 @@ const Tourism = () => {
           </div>
         </div>
       </div>
+      
+      {/* Consultation Form Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-16 px-4 md:px-8 bg-gray-900"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Customize Your Tourism Experience</h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Looking for something specific? Fill out the form below and our travel experts will create the perfect package tailored to your needs.
+            </p>
+          </div>
+          
+          <Consultation type="tourism" />
+        </div>
+      </motion.div>
     </div>
   )
 }
 
-export default Tourism  
+export default Tourism

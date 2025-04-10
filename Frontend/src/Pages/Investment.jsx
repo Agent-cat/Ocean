@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Consultation from '../components/Consultation';
 
 const Investment = () => {
   const properties = [
@@ -142,6 +143,26 @@ const Investment = () => {
           ))}
         </div>
       </div>
+      
+      {/* Consultation Form Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-16 px-4 md:px-8 bg-gray-900"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Request Property Consultation</h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Interested in investing in our luxury properties? Schedule a personalized consultation with our property experts to explore options tailored to your requirements.
+            </p>
+          </div>
+          
+          <Consultation type="purchase" />
+        </div>
+      </motion.div>
     </div>
   );
 };
