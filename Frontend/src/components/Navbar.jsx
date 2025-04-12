@@ -57,8 +57,8 @@ const Navbar = ({ user, onLogout }) => {
                 to={navItem.to}
                 className={({ isActive }) =>
                   isActive 
-                    ? "text-[#D4B678] font-medium" 
-                    : "text-gray-200 font-medium hover:text-white transition-colors"
+                    ? "text-[#D4B678] font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#D4B678] after:bottom-0 after:left-0" 
+                    : "text-white font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#D4B678] after:bottom-0 after:left-0 hover:after:w-full hover:text-[#D4B678] transition-all duration-500 after:transition-all after:duration-500 after:ease-in-out"
                 }
               >
                 {navItem.title}
@@ -74,8 +74,8 @@ const Navbar = ({ user, onLogout }) => {
                 to={navItem.to}
                 className={({ isActive }) =>
                   isActive 
-                    ? "text-[#D4B678] font-medium" 
-                    : "text-gray-200 font-medium hover:text-white transition-colors"
+                    ? "text-[#D4B678] font-medium relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#D4B678] after:bottom-0 after:left-0" 
+                    : "text-white font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#D4B678] after:bottom-0 after:left-0 hover:after:w-full hover:text-[#D4B678] transition-all duration-500 after:transition-all after:duration-500 after:ease-in-out"
                 }
               >
                 {navItem.title}

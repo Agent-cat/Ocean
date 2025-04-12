@@ -8,6 +8,7 @@ import Investment from '../Pages/Investment'
 import Journer from '../Pages/Journer'
 import Wellness from '../Pages/Wellness'
 import Occasions from '../Pages/Occasions'
+import Booking from '../Pages/Booking'
 
 const Navroutes = ({ onLogin }) => {
   return (
@@ -18,6 +19,7 @@ const Navroutes = ({ onLogin }) => {
       <Route path="/our-journey" element={<Journer/>} />
       <Route path="/wellness-centre" element={<Wellness/>} />
       <Route path="/occasions-and-meetups" element={<Occasions/>} />
+      <Route path="/booking" element={<Booking/>} />
       <Route path="/signin" element={<SignIn onLogin={onLogin} />} />
       <Route path="/signup" element={<SignUp onLogin={onLogin} />} />
     </Routes>

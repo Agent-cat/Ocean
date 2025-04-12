@@ -270,10 +270,8 @@ const Tourism = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Customize Your Tourism Experience</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Looking for something specific? Fill out the form below and our travel experts will create the perfect package tailored to your needs.
-            </p>
+            <h2 className=" bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] text-3xl md:text-4xl font-bold mb-4">Customize Your Tourism Experience</h2>
+            
           </div>
           
           <Consultation type="tourism" />

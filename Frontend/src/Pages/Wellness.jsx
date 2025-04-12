@@ -26,13 +26,13 @@ const Wellness = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8"
         >
-          <div className="bg-[#cd754a] text-white text-xs sm:text-sm font-medium py-2 px-4 sm:px-6 rounded-full inline-block mb-6">
+          <div className="bg-gradient-to-r from-[#cd754a] to-[#dfb562]  text-white text-xs sm:text-sm font-medium py-2 px-4 sm:px-6 rounded-full inline-block mb-6">
             ICONIC WELLNESS EXPERIENCE
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4">
+          <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] sm:text-5xl md:text-6xl font-serif mb-4">
             Ancient Wisdom, Modern Wellness
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] md:text-2xl max-w-3xl mx-auto">
             All at Your Doorstep
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ const Wellness = () => {
           </p>
         </div>
         
-        <h2 className="text-3xl sm:text-4xl font-serif text-center mb-12">
+        <h2 className="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] sm:text-4xl font-serif text-center mb-12">
           Holistic Healing Under One Roof
         </h2>
 
@@ -302,7 +302,7 @@ const Wellness = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 bg-white text-[#cd754a] hover:bg-white/90 font-medium py-3 px-8 rounded-md transition"
+            className="mt-8 bg-white bg-gradient-to-r from-[#cd754a] to-[#dfb562] text-white hover:bg-white/90 font-medium py-3 px-8 rounded-md transition"
           >
             Book Your Wellness Journey
           </motion.button>

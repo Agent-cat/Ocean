@@ -26,13 +26,13 @@ const Occasions = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8"
         >
-          <div className="bg-[#D4B678] text-black text-xs sm:text-sm font-medium py-2 px-4 sm:px-6 rounded-full inline-block mb-6">
+          <div className=" bg-gradient-to-r from-[#cd754a] to-[#dfb562] text-white  text-xs sm:text-sm font-medium py-2 px-4 sm:px-6 rounded-full inline-block mb-6">
             ICONIC EVENTS & GATHERINGS
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4">
+          <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] sm:text-5xl md:text-6xl font-serif mb-4">
              Grand Celebrations 
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
+          <p className="text-lg bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] sm:text-xl md:text-2xl max-w-3xl mx-auto">
             Where memories are crafted with elegance
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ const Occasions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl font-serif text-center mb-12"
+            className="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] sm:text-4xl font-serif text-center mb-12"
           >
             Celebrate Life's Special Moments
           </motion.h2>

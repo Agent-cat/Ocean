@@ -84,7 +84,7 @@ const Home = () => {
       >
         {/* Left Semi-circle */}
         <motion.div 
-          className="absolute hidden text-xl text-white font-bold md:flex z-40 left-0 top-[40%] items-center justify-center -translate-y-1/2 w-36 h-36 bg-blue-400/60 backdrop-blur-sm rounded-r-full shadow-lg"
+          className="absolute hidden text-xl text-white font-bold md:flex z-40 left-0 top-[40%] items-center justify-center -translate-y-1/2 w-36 h-36 bg-[#cd754a] backdrop-blur-sm rounded-r-full shadow-lg"
           initial={{ scale: 1 }}
           whileHover={{ 
             scale: 1.1,
@@ -106,7 +106,7 @@ const Home = () => {
         
         {/* Right Semi-circle */}
         <motion.div 
-          className="absolute hidden md:flex items-center text-center justify-center text-xl text-white font-bold z-40 right-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-blue-400/60 backdrop-blur-sm rounded-l-full shadow-lg"
+          className="absolute hidden md:flex items-center text-center justify-center text-xl text-white font-bold z-40 right-0 top-[40%] -translate-y-1/2 w-36 h-36 bg-[#cd754a] backdrop-blur-sm rounded-l-full shadow-lg"
           initial={{ scale: 1 }}
           whileHover={{ 
             scale: 1.1,
@@ -140,7 +140,7 @@ const Home = () => {
           onMouseEnter={handleLeftPanelEnter}
           onMouseLeave={handleLeftPanelLeave}
         >
-          <div className=" bg-[#cd754a] w-full h-screen p-8">
+          <div className=" bg-blue-400/60 w-full h-screen p-8">
           <div className=" border-double  w-full border-2 border-white flex-col flex items-center justify-center gap-6 p-8  h-full ">
             <h1 className='text-white   text-4xl font-bold'>𝓢𝓮𝓬𝓾𝓻𝓮 𝓨𝓸𝓾𝓻 𝓢𝓮𝓻𝓮𝓷𝓲𝓽𝔂</h1>
             <h1 className='text-white text-center  text-2xl font-bold'>Discover tailor-made, end-to-end tourism packages designed just for you — covering everything from travel planning and accommodation to local experiences and seamless returns, ensuring a hassle-free and unforgettable journey.</h1>
@@ -165,7 +165,7 @@ const Home = () => {
           onMouseEnter={handleRightPanelEnter}
           onMouseLeave={handleRightPanelLeave}
         >
-          <div className=" bg-[#cd754a] w-full h-screen p-8">
+          <div className=" bg-blue-400/60 w-full h-screen p-8">
           <div className=" border-double  w-full border-2 border-white flex-col flex items-center justify-center gap-6 p-8  h-full ">
             <h1 className='text-white font-[robert]   text-4xl font-bold'>𝓦𝓲𝓽𝓷𝓮𝓼𝓼 𝓽𝓱𝓮 𝓱𝓮𝓪𝓿𝓮𝓷</h1>
             <h1 className='text-white text-center  text-2xl font-bold'>Witness the ultimate investment opportunity in world-class luxury resorts! Step into a realm of elegance, exclusivity, and extraordinary returns. These premier destinations aren't just a place to relax—they're a chance to elevate your portfolio with high-value assets in the booming luxury hospitality market. Don’t miss your chance to own a piece of paradise—invest in luxury, invest in success!</h1>
@@ -228,14 +228,16 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
             className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center'
           >
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='bg-[#cd754a] hover:bg-amber-700 text-white py-2.5 sm:py-3 px-5 sm:px-8 rounded-md transition text-sm sm:text-base'
             >
-              Book Your Stay
+              <Link className='text-white py-2.5 sm:py-3 px-5 sm:px-8 rounded-md transition text-sm sm:text-base' to='/booking'>
+              Book Your Stay</Link>
+              
             </motion.button>
-            <motion.button 
+            <motion.button to='/booking'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='border border-white hover:bg-white/10 text-white py-2.5 sm:py-3 px-5 sm:px-8 rounded-md transition text-sm sm:text-base'

@@ -62,7 +62,7 @@ const Investment = () => {
           <div className="inline-block px-4 py-1 rounded-full  text-amber-400 text-sm font-medium mb-4">
             YOUR NEXT SMART INVESTMENT
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] md:text-6xl font-bold mb-6">
             Luxury Living <span className="font-serif italic">&</span> <br className="md:hidden" />{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#cd754a] to-[#dfb562]">Smart Investment</span>
           </h1>
@@ -78,7 +78,7 @@ const Investment = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12"
+          className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] md:text-3xl font-bold text-center mb-8 md:mb-12"
         >
           Featured Property Collections
         </motion.h2>
@@ -154,10 +154,8 @@ const Investment = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Request Property Consultation</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Interested in investing in our luxury properties? Schedule a personalized consultation with our property experts to explore options tailored to your requirements.
-            </p>
+            <h2 className=" bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] text-3xl md:text-4xl font-bold mb-4">Request Property Consultation</h2>
+            
           </div>
           
           <Consultation type="purchase" />
