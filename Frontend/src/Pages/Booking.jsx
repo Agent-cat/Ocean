@@ -44,10 +44,51 @@ const Booking = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Handle form submission
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit booking');
+      }
+
+      const data = await response.json();
+      
+      // Show success message
+      alert('Booking request submitted successfully! We will contact you soon.');
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        country: '',
+        contactPreference: 'phone',
+        purpose: [],
+        package: '',
+        checkIn: '',
+        checkOut: '',
+        adults: '',
+        children: '',
+        infants: '',
+        accommodation: '',
+        rooms: '',
+        view: '',
+        mealPreference: '',
+        specialRequirements: []
+      });
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      alert('Failed to submit booking. Please try again.');
+    }
   };
 
   return (
