@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Consultation from '../components/Consultation'
 
 const tourismPackages = [
@@ -130,6 +130,14 @@ const tourismPackages = [
 ];
 
 const Tourism = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const handleBookNow = (pkg) => {
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen overflow-hidden bg-black text-white">
       <motion.div 
@@ -249,6 +257,7 @@ const Tourism = () => {
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => handleBookNow(pkg)}
                     className="w-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] hover:from-[#cf6631] hover:to-[#e09a4d] text-white py-3 rounded-lg font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Book Now
@@ -259,24 +268,33 @@ const Tourism = () => {
           </div>
         </div>
       </div>
-      
-      {/* Consultation Form Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-16 px-4 md:px-8 bg-gray-900"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className=" bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] text-3xl md:text-4xl font-bold mb-4">Customize Your Tourism Experience</h2>
-            
-          </div>
-          
-          <Consultation type="tourism" />
-        </div>
-      </motion.div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-4xl"
+            >
+              <Consultation 
+                type="tourism" 
+                packageDetails={selectedPackage}
+                onClose={() => setIsModalOpen(false)}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

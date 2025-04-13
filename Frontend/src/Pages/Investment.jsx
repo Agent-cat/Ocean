@@ -1,8 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Consultation from '../components/Consultation';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import PropertyRegistrationForm from '../components/PropertyRegistrationForm';
 
 const Investment = () => {
+  const [selectedProperty, setSelectedProperty] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const properties = [
     {
       title: 'Ocean Front Villa',
@@ -35,6 +38,11 @@ const Investment = () => {
       features: ['Tropical Garden', 'Courtyard', 'Spa Bathroom', 'Outdoor Shower', 'Walk to Amenities'],
     },
   ];
+
+  const handleRequestDetails = (property) => {
+    setSelectedProperty(property);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen overflow-hidden bg-black text-white">
@@ -134,6 +142,7 @@ const Investment = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={() => handleRequestDetails(property)}
                   className="w-full bg-gradient-to-r from-[#cd754a] to-[#dfb562] text-white py-3 rounded-lg font-medium transition-all duration-300"
                 >
                   Request Details
@@ -144,23 +153,31 @@ const Investment = () => {
         </div>
       </div>
       
-      {/* Consultation Form Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-16 px-4 md:px-8 bg-gray-900"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className=" bg-clip-text text-transparent bg-gradient-to-r from-white to-[#dfb562] text-3xl md:text-4xl font-bold mb-4">Request Property Consultation</h2>
-            
-          </div>
-          
-          <Consultation type="purchase" />
-        </div>
-      </motion.div>
+      {/* Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-4xl"
+            >
+              <PropertyRegistrationForm 
+                propertyId={selectedProperty?._id} 
+                onClose={() => setIsModalOpen(false)} 
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
