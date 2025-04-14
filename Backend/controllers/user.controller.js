@@ -27,8 +27,7 @@ const Signin = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        counselorId: user.counselorId,
-        counselingStudents: user.counselingStudents
+        role: user.role
       },
     });
   } catch (error) {
@@ -38,18 +37,14 @@ const Signin = async (req, res) => {
 
 const Signup = async (req, res) => {
   try {
-    const { name, email, password, counselorId, counselingStudents } = req.body;
-    if (!name || !email || !password || !counselorId) {
+    
+    const { name, email, password, role } = req.body;
+    if (!name || !email || !password) {
       return res.status(400).json({ message: "Please fill all required fields" });
     }
-    const existingUser = await User.findOne({
-      $or: [
-        { email },
-        { counselorId }
-      ]
-    });
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "User with this email or counselor ID already exists" });
+      return res.status(400).json({ message: "User with this email already exists" });
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -57,8 +52,7 @@ const Signup = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      counselorId,
-      counselingStudents: counselingStudents || []
+      role: role || "user"
     });
 
     const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
@@ -69,8 +63,7 @@ const Signup = async (req, res) => {
         id: newUser._id,
         name: newUser.name,
         email: newUser.email,
-        counselorId: newUser.counselorId,
-        counselingStudents: newUser.counselingStudents
+        role: newUser.role
       }
     });
   } catch (error) {

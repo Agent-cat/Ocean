@@ -61,7 +61,6 @@ exports.createInvestment = async (req, res) => {
   }
 };
 
-// Update investment
 exports.updateInvestment = async (req, res) => {
   try {
     const investment = await Investment.findByIdAndUpdate(
